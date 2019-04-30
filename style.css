@@ -1,0 +1,545 @@
+/*
+Theme Name: Lags Theme 2
+Theme URI: https://wordpress.org/themes/lagstheme2/
+Author: Arhen Santiago
+Author URI: lagsdevs.com
+Description: This is a pure custom theme with no frameworks
+Version: 1.0
+*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+	background-color: #686868;
+}
+p {
+	line-height: 1.6;
+}
+a {
+	cursor: pointer;
+}
+.container {
+	max-width: 80%;
+	margin: auto;
+}
+.nav-branding i {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+.accent {
+	color: #dcb000;
+}
+.navbar {
+	background-color: #343434;
+	padding: 7px 0 10px 0;
+}
+.nav-branding {
+}
+.navbar-content {
+	display: flex;
+	justify-content: space-between;
+}
+.navbar .navigation {
+	list-style-type: none;
+	justify-content: space-between;
+	flex: 1;
+}
+.navbar .navigation li {
+	display: inline-block;
+	width: 90px;
+	height: 100%;
+	text-align: center;
+}
+.navbar .navigation li a {
+	text-decoration: none;
+	color: #d9c369;
+	font-size: .7rem;
+	font-weight: 300;
+}
+
+.navigation li:hover > a {
+	color: #fff;
+}
+.navigation li.active a {
+	color: #fff;
+}
+
+.nav-branding i {
+	margin-right: 10px;
+	color: #dcb000;
+}
+
+.dropdown-sub-menu {
+	position: absolute;
+	background-color: #343434;
+	padding: 1rem;
+}
+.dropdown-sub-menu li {
+	list-style-type: none;
+}
+.nav-branding .brand-logo a {
+	color: #dcb000;
+	text-decoration: none;
+	font-weight: 700;
+}
+.dropdown i,
+.side-dropdown i {
+	margin-left: 10px;
+}
+.sidenav {
+	position: fixed;
+	animation-name: slideMenu;
+	animation-duration: 300ms;
+	top: 0;
+	left: 0;
+	background-color: #343434;
+	height: 100vh;
+	overflow-x: hidden;
+	width: 30vh;
+	padding-top: 1.5rem;
+}
+
+.sidenav > ul > li {
+	border-bottom: 1px solid rgb(97, 97, 97);
+}
+.sidenav ul > li > ul {
+	padding-left: 20px;
+	list-style: none;
+}
+.sidenav ul li a:hover {
+	color: #ffda47;
+}
+.sidenav ul li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	padding: .5rem;
+	text-transform: uppercase;
+}
+.sidenav ul li.active a {
+	color: #fee172;
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.432);
+}
+
+.title {
+	color: #dcb000;
+	font-weight: 500;
+	margin-top: calc(1.5rem - 12px);
+	margin-bottom: calc(1.5rem - 12px);
+}
+.excerpt-card {
+	background-color: #959595a6;
+	color: #fff;
+	margin-top: .6rem;
+	display: flex;
+	width: 90%;
+}
+.excerpt-thumbnail {
+	flex: 2;
+}
+.excerpt-thumbnail img {
+	width: 100%;
+	height: 100%;
+}
+.post-excerpt {
+	flex: 8;
+	padding: 1rem;
+}
+.post-title {
+	font-weight: 600;
+}
+.post-title a {
+	color: #dcb000;
+	text-decoration: none;
+}
+.post-title a:hover {
+	text-decoration: underline;
+}
+.post-excerpt p {
+	font-size: .8rem;
+}
+.main-area {
+	display: flex;
+	justify-content: space-between;
+}
+.page {
+	margin-top: 2rem;
+}
+.sidebar {
+	width: 40%;
+}
+.widget {
+	background-color: #959595a6;
+	padding: 1.4rem;
+	margin-top: .7rem;
+}
+.widget h4 {
+	text-align: center;
+	color: #fff;
+}
+.widget ul {
+	list-style: none;
+}
+.widget ul li::before {
+	content: "\2022";
+	color: #dcb000;
+	font-weight: bold;
+	display: inline-block;
+	width: 1em;
+}
+.widget ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: 300;
+	font-size: .8rem;
+	transition: 300ms color ease-in;
+}
+.widget ul li a:hover {
+	color: #dcb000;
+}
+footer {
+	height: 50px;
+	background-color: #ffda47;
+	position: relative;
+}
+main {
+	min-height: calc(100vh - 50px);
+	margin-bottom: 1.5rem;
+}
+.promotion {
+	padding-top: 10px;
+	padding-left: 10px;
+	font-weight: 500;
+}
+/* Single */
+.featured-image {
+	width: 70%;
+	height: 30vh;
+	margin: 1.4rem 0;
+	border: 5px solid #dcb000;
+	background-color: #959595a6;
+	box-shadow: 10px 10px 10px rgba(41, 41, 41, 0.493);
+}
+.featured-image img {
+	width: 100%;
+	height: 100%;
+}
+.post {
+	background: #959595a6;
+	color: #fff;
+	padding: 1.3rem;
+	width: 80%;
+}
+.post h1 {
+	color: #dcb000;
+	font-weight: 500;
+}
+.post p {
+	font-size: .9rem;
+}
+.post h6 {
+	padding: .3rem 0;
+}
+.post-nav {
+	display: flex;
+	margin-top: 2rem;
+}
+.post-nav a {
+	color: rgb(230, 230, 230);
+	text-decoration: none;
+	font-size: .8rem;
+}
+.post-nav a:hover {
+	color: #dcb000;
+	text-decoration: underline;
+}
+.post-nav a:first-child {
+	flex: 4.5;
+}
+.post-nav a:last-child {
+	flex: 1;
+}
+
+.comment-section {
+	margin-top: 1.3rem;
+}
+.no-comments {
+	color: #fee172;
+	font-size: .7rem;
+	background-color: #959595a6;
+	width: 80%;
+	padding: .3rem;
+}
+.comment-respond {
+	background-color: #959595a6;
+	width: 80%;
+	padding: 1.2rem;
+}
+.logged-in-as a {
+	color: #fff;
+	text-decoration: none;
+	font-size: .7rem;
+}
+.logged-in-as a:hover {
+	text-decoration: underline;
+}
+.logged-in-as a:nth-child(2) {
+	color: #ffda47;
+}
+.comment-reply-title,
+.comment-reply-title a {
+	color: #fff;
+	text-decoration: none;
+	font-size: .9rem;
+}
+.comment-reply-title a:hover {
+	text-decoration: underline;
+}
+.comment-reply-title small a {
+	color: #ffda47;
+}
+.children > div {
+	border-top: 1px solid #333;
+	margin-top: 0;
+	padding-left: 1rem;
+}
+.children .comment-avatar img {
+	width: 45px;
+	height: 40px;
+}
+#email-notes,
+.comment-notes {
+	color: #fff;
+	font-size: .7rem;
+}
+.comment-notes {
+	color: #ffda47;
+}
+span.required {
+	color: #ffda47;
+}
+.comment-respond form {
+	padding: 0;
+}
+.horizontal {
+	display: flex;
+}
+.half {
+	width: 100%;
+	margin-right: .3rem;
+}
+.half input {
+	width: 100%;
+	border: 0;
+	outline: 0;
+	background: #a5a5a5;
+	padding: .3rem;
+	color: #fff;
+}
+.whole {
+	width: 100%;
+}
+.whole textarea {
+	width: 100%;
+	border: 0;
+	outline: none;
+	background-color: #a5a5a5;
+	color: #fff;
+	padding: .3rem;
+}
+.whole textarea::placeholder {
+	color: #fff;
+}
+.comment-form-cookies-consent {
+	display: none;
+}
+label {
+	color: #fff;
+}
+.form-submit {
+	margin-top: 1rem;
+}
+.submit {
+	background-color: #dcb000;
+	border: 0;
+	outline: 0;
+	color: #000;
+	padding: .3rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+.comment {
+	position: relative;
+	background-color: #000;
+	color: #fff;
+}
+.comments {
+	width: 60%;
+	margin-top: 1rem;
+}
+.comment-head {
+	display: flex;
+}
+.comment-info {
+	flex: 9;
+	padding-left: .3rem;
+}
+.comment-avatar {
+	flex: 1;
+}
+.comment-avatar img {
+	width: 80%;
+	height: 80%;
+	margin-top: 7px;
+	margin-left: 7px;
+}
+.comment-meta {
+	color: #fee172;
+	font-size: .8rem;
+}
+.comment-meta small {
+	font-size: .6rem;
+}
+
+.comment-date {
+	color: #fee172;
+	font-size: .6rem;
+	position: absolute;
+	top: 10%;
+	left: 90%;
+}
+.comment-info p {
+	font-size: .6rem;
+}
+.comment-action {
+	position: absolute;
+	bottom: 10%;
+	right: 10%;
+}
+.comment-action a {
+	text-decoration: none;
+	color: rgb(216, 216, 216);
+	font-size: .7rem;
+	text-transform: uppercase;
+}
+/* Front-Page */
+.showcase {
+	display: flex;
+	width: 100%;
+	height: 60vh;
+	background-color: #959595a6;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+}
+.showcase-inner h1 {
+	font-size: 2.5rem;
+	padding: 1rem 0;
+	font-weight: 500;
+}
+.showcase-inner p {
+	padding-bottom: 1.4rem;
+}
+.showcase-inner a {
+	background-color: #ffda47;
+	color: #000;
+	text-decoration: none;
+	font-weight: 700;
+	padding: .3rem 2rem;
+}
+.grid3x3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+.post-tidbit {
+	background-color: #959595a6;
+	color: #fff;
+	border-bottom: 5px solid #dcb000;
+	padding: 1rem;
+}
+
+.post-tidbit h2 a {
+	font-weight: 600;
+	color: #dcb000;
+	text-decoration: none;
+}
+.post-tidbit h2 a:hover {
+	text-decoration: underline;
+}
+.post-tidbit p {
+	font-size: .8rem;
+}
+/* KeyFrames */
+
+@keyframes slideMenu {
+	from {
+		left: -30vh;
+	}
+	to {
+		left: 0;
+	}
+}
+
+/* Media Query */
+@media (max-width: 1200px) {
+	.excerpt-thumbnail {
+		flex: 0;
+	}
+}
+@media (max-width: 1000px) {
+	.desktop {
+		display: none !important;
+	}
+	.nav-branding i {
+		display: inline-block;
+	}
+}
+@media (max-width: 999px) {
+	.main-area {
+		display: block;
+	}
+	.featured-image {
+		width: 100%;
+	}
+	.post {
+		width: 100%;
+	}
+	.excerpt-card {
+		width: 100%;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	.comments {
+		width: 100%;
+	}
+	.horizontal {
+		display: block;
+	}
+	.comment-respond {
+		width: 100%;
+	}
+	.comment-date {
+		font-size: .5rem;
+	}
+}
